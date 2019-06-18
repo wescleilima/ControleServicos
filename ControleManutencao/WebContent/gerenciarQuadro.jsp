@@ -1,3 +1,4 @@
+<%@page import="org.senai.contrManutencao.modelo.Quadro"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -37,7 +38,7 @@
 			       }
 			    }
 			};
-			xhttp.open("GET", "servletPainel?"+dadosForm(), true);
+			xhttp.open("GET", "servletQuadro?"+dadosForm(), true);
 			xhttp.send();
 			
 		}
@@ -64,13 +65,13 @@
 			       }
 			    }
 			};
-			xhttp.open("GET", "servletPainel?"+dadosForm()+"&apagar", true);
+			xhttp.open("GET", "servletQuadro?"+dadosForm()+"&apagar", true);
 			xhttp.send();
 			
 		}
 			
 			function novo(){
-				window.location.replace('gerenciarPainel.jsp');
+				window.location.replace('gerenciarQuadro.jsp');
 			}
 					
 		}
@@ -79,21 +80,21 @@
 
 <%
 // meu java rolar
-Painel painel = new Painel();
+	Quadro quadro = new Quadro();
 
 if(request.getParameter("cod") != null){
 	int cod = Integer.parseInt(request.getParameter("cod"));
-	painel = painel.getPainel(cod);	
+	//quadro = quadro.getQuadro(cod);	
 }
 
 
 %>
 
 	<div class="container">
-		<h2>Gerenciar o Painel dos Pacientes no Centro Cirúrgico</h2>
+		<h2>Gerenciar Quadro de Serviços</h2>
 		<form id="formulario">
 		<input type="hidden" 
-		value="<% out.print(painel.getCod()); %>"
+		value="<% out.print(quadro.getCod()); %>"
 		id="cod"
 		/>
 		
@@ -101,62 +102,62 @@ if(request.getParameter("cod") != null){
 		<div id="msg"></div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label for="nome">Nome Completo:</label> 
+					<label for="nome">DescriçãodoServiço:</label> 
 					<input type="text"
 						class="form-control" 
 						id="nome" 
-						value="<% out.print(painel.getNomeCompleto()); %>"
-						placeholder="Nome do Paciente"
+						value="<% out.print(quadro.getDescServico()); %>"
+						placeholder="Descrição do Serviço"
 						name="nome">
 				</div>
 
 				<div class="form-group col-md-3">
-					<label for="status">Status:</label> 
-					<select class="form-control" id="status">
-						<option >Pré-Operatório</option>
-						<option >Em sala cirúrgica</option>
-						<option >Em recuperação</option>
-						<option >Transferido</option>
+					<label for="Situação">Status:</label> 
+					<select class="form-control" id="Situação">
+						<option >Agendado</option>
+						<option >Em andamento</option>
+						<option >Parado</option>
+						<option >Concluído</option>
 					</select>	
 					<script>
-					document.getElementById("status").value = 
-						"<% out.print(painel.getStatus()); %>";
+					document.getElementById("Situação").value = 
+						"<% out.print(quadro.getSituacao()); %>";
 					</script>
 				</div>
 
 				<div class="form-group col-md-3">
 					<label for="local">Local:</label> <input type="text"
 						class="form-control" 
-						value="<% out.print(painel.getLocal()); %>"
-						id="local" placeholder="Quarto/Sala"
+						value="<% out.print(quadro.getLocal()); %>"
+						id="local" placeholder="Apart/Torre"
 						>
 				</div>
 			</div>
 
 			<div class="form-row">
 				<div class="form-group col-md-3">
-					<label for="local">Início Previsto:</label> <input type="time"
+					<label for="local">Responsável:</label> <input type="time"
 						class="form-control" 
-						value="<% out.print(painel.getIniPrevisto()); %>"
-						id="iniPrev" >
+						value="<% out.print(quadro.getResponsavel()); %>"
+						id="responsavel" >
 				</div>
 				<div class="form-group col-md-3">
-					<label for="local">Início Cirúrgia:</label> <input type="time"
+					<label for="local">Situação:</label> <input type="time"
 						class="form-control" 
-						value="<% out.print(painel.getIniCirurgia()); %>"
-						id="iniCirrg" >
+						value="<% out.print(quadro.getSituacao()); %>"
+						id="situação" >
 				</div>
 				<div class="form-group col-md-3">
-					<label for="local">Fim Cirúrgia:</label> <input type="time"
+					<label for="local">DataInício :</label> <input type="time"
 						class="form-control" 
-						value="<% out.print(painel.getFimCirurgia()); %>"
-						id="fimCirrg" >
+						value="<% out.print(quadro.getDtInicio()); %>"
+						id="dataInício" >
 				</div>
 				<div class="form-group col-md-3">
-					<label for="local">Saída Prevista:</label> <input type="time"
+					<label for="local">DataFim:</label> <input type="time"
 						class="form-control" 
-						value="<% out.print(painel.getSaidaPrevista()); %>"
-						id="saiPrev" >
+						value="<% out.print(quadro.getDtFim()); %>"
+						id="dataFim" >
 				</div>
 			</div>
 			<button type="button" class="btn btn-secondary" onclick="novo()">Novo</button>

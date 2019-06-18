@@ -92,6 +92,12 @@ public class Quadro {
 	public void setDtFim(String dtFim) {
 		this.dtFim = dtFim;
 	}
+
+
+	public boolean inserir() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
 }
