@@ -22,21 +22,19 @@ public void service(HttpServletRequest request,
 ServerException, IOException{
  
  //tenho que pegar as informações do formulário
- String descServico = request.getParameter("descServico");
- String local = request.getParameter("local");
+ String descricao = request.getParameter("descricao");
+ String status = request.getParameter("status");
  String responsavel = request.getParameter("responsavel");
- String situacao = request.getParameter("situacao");
- String dtInicio = request.getParameter("dtInicio");
- String dtFim = request.getParameter("dtFim");
- System.out.println(" Descrição do Serviço: "+ descServico +" Local: "+ local + " Responsável: "+ responsavel +" Situação: " + situacao +" Data Início: " + dtInicio + "Data Fim" + dtFim );
+// String dtInicio = request.getParameter("dtInicio");
+// String dtFim = request.getParameter("dtFim");
+// System.out.println(" Descrição do Serviço: "+ descServico +" Local: "+ local + " Responsável: "+ responsavel +" Situação: " + situacao +" Data Início: " + dtInicio + "Data Fim" + dtFim );
  
  Quadro obj = new Quadro();
- obj.setDescServico(descServico);
- obj.setLocal(local);
+ obj.setDescricao(descricao);
+ obj.setStatus(status);
  obj.setResponsavel(responsavel);
- obj.setSituacao(situacao);
- obj.setDtInicio(dtInicio);
- obj.setDtFim(dtFim);
+// obj.setDtInicio(dtInicio);
+// obj.setDtFim(dtFim);
  
  PrintWriter saida = response.getWriter();
  int cod = Integer.parseInt(

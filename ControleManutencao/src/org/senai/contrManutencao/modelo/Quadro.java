@@ -5,19 +5,18 @@ public class Quadro {
 
 	
 	private int cod;
-	private String descServico;
-	private String local;
+	private String descricao;
+	private String status;
 	private String responsavel;
-	private String situacao;
 	private String dtInicio;
 	private String dtFim;
 	
 	
+	
 	public Quadro(){
-		setDescServico("");
-		setLocal("");
+		setDescricao("");
+		setStatus("");
 		setResponsavel("");
-		setSituacao("");
 		setDtInicio("");
 		setDtFim("");
 	
@@ -34,23 +33,23 @@ public class Quadro {
 	}
 
 
-	public String getDescServico() {
-		return descServico;
+	public String getDescricao() {
+		return descricao;
 	}
 
 
-	public void setDescServico(String descServico) {
-		this.descServico = descServico;
+	public void setDescricao(String desccricao) {
+		this.descricao = desccricao;
 	}
 
 
 	public String getLocal() {
-		return local;
+		return status;
 	}
 
 
-	public void setLocal(String local) {
-		this.local = local;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 
@@ -61,16 +60,6 @@ public class Quadro {
 
 	public void setResponsavel(String responsavel) {
 		this.responsavel = responsavel;
-	}
-
-
-	public String getSituacao() {
-		return situacao;
-	}
-
-
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
 	}
 
 

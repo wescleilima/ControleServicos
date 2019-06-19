@@ -22,7 +22,7 @@
         <th width="28%">Descrição do Serviço<p></th>
 		<th width="17%">Local<p></th>
 	    <th width="17%">Responsável<p></th> 
-		<th width="17%">Situação<p></th>
+		<th width="17%">Status<p></th>
 		<th width="15%">Data Início<p></th>
 		<th width="15%">Data Fim<p></th>
 		
