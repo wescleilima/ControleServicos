@@ -36,21 +36,24 @@ ServerException, IOException{
 // obj.setDtInicio(dtInicio);
 // obj.setDtFim(dtFim);
  
+ obj.inserir();
+ 
  PrintWriter saida = response.getWriter();
  int cod = Integer.parseInt(
    request.getParameter("cod"));
+ 
  boolean sucesso = false;
- if(cod > 0) {
-  obj.setCod(cod);
-  if(request.getParameter("apagar")==null) {
+// if(cod > 0) {
+//  obj.setCod(cod);
+//  if(request.getParameter("apagar")==null) {
 //   sucesso = obj.atualizar();
-  }else {
+//  }else {
 //   sucesso = obj.apagar();
-  }
-   
- }else {
-  sucesso = obj.inserir();
- }
+//  }
+//   
+// }else {
+//  sucesso = obj.inserir();
+// }
  
  if(sucesso) {
   saida.print("Gravado com sucesso");
