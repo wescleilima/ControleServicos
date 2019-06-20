@@ -51,9 +51,9 @@ ServerException, IOException{
 //   sucesso = obj.apagar();
 //  }
 //   
-// }else {
-//  sucesso = obj.inserir();
-// }
+//}else {
+  sucesso = obj.inserir();
+//}
  
  if(sucesso) {
   saida.print("Gravado com sucesso");

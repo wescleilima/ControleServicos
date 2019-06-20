@@ -28,7 +28,7 @@
 		//dados += "&dtInicio="+document.getElementById("dtInicio").value;
 		//dados += "&dtFim="+document.getElementById("dtFim").value;
 		//dados += "&cod="+document.getElementById("cod").value;
-		alert(dados);
+		//alert(dados);
 		return dados;
 	}
 		function gravar() {
