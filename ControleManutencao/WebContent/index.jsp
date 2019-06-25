@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<div align="center"><img src="img/resort.jpg"
-	height="180" width="200"/>
-	<h1>Resort Infinity Salvador</h1>
+<div align="center"><img src="img/allia.jpg"
+	height="240" width="400"/>
+	<h1>Controle de Serviço</h1>
 </div>
             
   

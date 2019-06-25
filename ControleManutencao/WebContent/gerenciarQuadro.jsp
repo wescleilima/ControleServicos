@@ -96,9 +96,10 @@
 			//quadro = quadro.getQuadro(cod);	
 		}
 	%>
-
-	<div class="container">
-		<h2 align="center">Controle de Serviços</h2>
+	<p>
+	<div class="container"align="center"><img src="img/allia.jpg"
+	height="240" width="400"/><p>
+		<h2 align="center">Abertura de Chamado</h2>
 		<form id="formulario">
 			<input type="hidden" value="<%out.print(quadro.getCod());%>"
 				id="cod" />
