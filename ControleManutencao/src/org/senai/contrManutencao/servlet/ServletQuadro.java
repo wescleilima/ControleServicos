@@ -24,14 +24,16 @@ ServerException, IOException{
  //tenho que pegar as informações do formulário
  String descricao = request.getParameter("descricao");
  String status = request.getParameter("status");
+ String local = request.getParameter("local");
  String responsavel = request.getParameter("responsavel");
 // String dtInicio = request.getParameter("dtInicio");
 // String dtFim = request.getParameter("dtFim");
-// System.out.println(" Descrição do Serviço: "+ descServico +" Local: "+ local + " Responsável: "+ responsavel +" Situação: " + situacao +" Data Início: " + dtInicio + "Data Fim" + dtFim );
+// System.out.println(" Descrição do Serviço: "+ descServico + "Status: " + status + Local: "+ local + " Responsável: "+ responsavel +" Data Início: " + dtInicio + "Data Fim" + dtFim );
  
  Quadro obj = new Quadro();
  obj.setDescricao(descricao);
  obj.setStatus(status);
+ obj.setLocal(local);
  obj.setResponsavel(responsavel);
 // obj.setDtInicio(dtInicio);
 // obj.setDtFim(dtFim);
@@ -43,17 +45,17 @@ ServerException, IOException{
    request.getParameter("cod"));
  
  boolean sucesso = false;
-// if(cod > 0) {
-//  obj.setCod(cod);
-//  if(request.getParameter("apagar")==null) {
-//   sucesso = obj.atualizar();
-//  }else {
-//   sucesso = obj.apagar();
-//  }
-//   
-//}else {
+ if(cod > 0) {
+  obj.setCod(cod);
+  if(request.getParameter("apagar")==null) {
+  sucesso = obj.atualizar();
+ }else {
+  sucesso = obj.apagar();
+ }
+  
+}else {
   sucesso = obj.inserir();
-//}
+}
  
  if(sucesso) {
   saida.print("Gravado com sucesso");

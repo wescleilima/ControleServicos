@@ -29,26 +29,7 @@
       </tr>
     </thead>
     <body>
-      <tr>
       
-        <td>Luz Queimada</td>
-      
-      
-      </tr>
-      <tr>
-	  
-        <td>Troca de Fechadura</td>
-	  
-      </tr>
-      
-	  <tr>
-		<td>Pintura</td>
-		
-		</tr>
-	  <tr>
-		  <td>Vazamento</td>
-		
-		  </tr>
     </tbody>
   </table>
 

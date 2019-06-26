@@ -22,7 +22,8 @@
 	function dadosForm() {
 		var dados = "";		
 		dados += "descricao="+document.getElementById("descricao").value;
-		dados += "&status="+document.getElementById("status").value;		
+		dados += "&status="+document.getElementById("status").value;
+		dados += "&local="+document.getElementById("local").value;
 		dados += "&responsavel="+document.getElementById("responsavel").value;
 		
 		//dados += "&dtInicio="+document.getElementById("dtInicio").value;
