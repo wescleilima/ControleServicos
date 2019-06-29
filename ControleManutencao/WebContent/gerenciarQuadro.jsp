@@ -25,10 +25,11 @@
 		dados += "&status="+document.getElementById("status").value;
 		dados += "&local="+document.getElementById("local").value;
 		dados += "&responsavel="+document.getElementById("responsavel").value;
+		dados += "&cod="+document.getElementById("cod").value;
 		
 		//dados += "&dtInicio="+document.getElementById("dtInicio").value;
 		//dados += "&dtFim="+document.getElementById("dtFim").value;
-		//dados += "&cod="+document.getElementById("cod").value;
+		
 		//alert(dados);
 		return dados;
 	}
@@ -80,30 +81,33 @@
 			
 		}
 			
-			function novo(){
-				window.location.replace('gerenciarQuadro.jsp');
-			}
+			
 					
+		}
+		
+		function novo(){			
+			window.location.replace('gerenciarQuadro.jsp');
 		}
 	</script>
 
 
 	<%
-		// meu java rolar
+		// objeto que vai ser utilizado
 		Quadro quadro = new Quadro();
 
 		if (request.getParameter("cod") != null) {
 			int cod = Integer.parseInt(request.getParameter("cod"));
-			//quadro = quadro.getQuadro(cod);	
+			// busca o quadro informado na url
+			quadro = quadro.getQuadro(cod);
 		}
 	%>
 	<p>
-	<div class="container"align="center"><img src="img/allia.jpg"
-	height="240" width="400"/><p>
+	<div class="container" align="center">
+		<img src="img/allia.jpg" height="240" width="400" />
+		<p>
 		<h2 align="center">Abertura de Chamado</h2>
 		<form id="formulario">
-			<input type="hidden" value="<%out.print(quadro.getCod());%>"
-				id="cod" />
+			<input type="hidden" value="<%out.print(quadro.getCod());%>" id="cod" />
 
 
 			<div id="msg"></div>
@@ -123,14 +127,13 @@
 						<option>Parado</option>
 						<option>Concluído</option>
 					</select>
-					
+
 					<script>
-					document.getElementById("status") 
-					
-						
+					document.getElementById("status").value = "<%out.print(quadro.getStatus());%>
+						";
 					</script>
-					
-					
+
+
 				</div>
 
 				<div class="form-group col-md-3">
@@ -161,8 +164,8 @@
 
 				<div class="form-group col-md-3">
 					<label for="local">DataInício :</label> <input type="date"
-						class="form-control"
-						value="<%out.print(quadro.getDtInicio());%>" id="dataInício">
+						class="form-control" value="<%out.print(quadro.getDtInicio());%>"
+						id="dataInício">
 				</div>
 				<div class="form-group col-md-3">
 					<label for="local">DataFim:</label> <input type="date"

@@ -41,7 +41,7 @@ public class ServletQuadro extends HttpServlet {
 		int cod = 0;
 		
 		if(codigo!=null) {
-			Integer.parseInt(codigo);
+			cod = Integer.parseInt(codigo);
 		}
 			
 
@@ -55,7 +55,7 @@ public class ServletQuadro extends HttpServlet {
 			}
 
 		} else {
-			sucesso = obj.inserir();
+//			sucesso = obj.inserir();
 		}
 
 		if (sucesso) {

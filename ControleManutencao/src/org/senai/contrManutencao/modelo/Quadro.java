@@ -248,12 +248,12 @@ public class Quadro {
 				
 				// o que esta entre aspas "nome_da_coluna_no_banco"
 				p.setCod(rs.getInt("cod"));
-				p.setDescricao(rs.getString("descricao_servico"));
+				p.setDescricao(rs.getString("descricao"));
 				p.setStatus(rs.getString("status"));
 				p.setLocal(rs.getString("local"));
 				p.setResponsavel(rs.getString("responsavel"));
 				p.setDtInicio(rs.getString("dt_inicio"));
-				p.setDtFim(rs.getString("dt_fim "));
+				p.setDtFim(rs.getString("dt_fim"));
 		
 			}
 			ps.close();
